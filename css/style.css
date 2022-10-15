@@ -2,13 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&family=Raleway&family=Kanit');
 
 /* Reglas Generales */
+@import url('general.css');
 
 /* Cabecera */
 
+
 /* Navegacion */
+@import url('navegation.css');
 
 /* Contenido */
 
+
 /* Pie de Página */
+
 
 /* Autor: Alejandro Daniel Di Stefano */
