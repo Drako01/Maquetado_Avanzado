@@ -10,6 +10,13 @@
           "scroll-behavior"
         ]
       }
-    ]
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "link-name": "off"
+      }
+    ],
+    "button-type": "off"
   }
 }
