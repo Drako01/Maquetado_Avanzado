@@ -9,14 +9,30 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<header id="header">
-    <h1>Maquetacion Web</h1>
-    <h2>CSS | SASS | LESS</h2>
-</header>
-
 <body>
     <!-- Cabecera -->
-
+    <header id="header">
+        <div class="header">
+            <h1>Maquetacion Web</h1>
+            <p>CSS | SASS | LESS</p>
+            <div class="indicators">
+                <button class="active"></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+        <ul class="slide">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button class="control icon-prev"></button>
+        <button class="control icon-next"></button>
+    </header>
     <!-- Navegacion -->
     <nav id="nav">
         <a href="#" class="logo"></a>
@@ -30,11 +46,12 @@
         </ul>
     </nav>
     <!-- Contenido -->
-
-    <!-- Pie -->
+    <main>
+        
+    </main>
+    <!-- Pie de Pagina -->
     <footer id="footer">
-        <p>&copy; 2022 - Autor: Alejandro Daniel Di Stefano</p>
-
+        <p>&copy;2022 - Autor: Alejandro Daniel Di Stefano - Todos los derechos reservados</p>
     </footer>
     <!-- Scripts JS -->
     <script src="js/index.js" type="module"></script>
