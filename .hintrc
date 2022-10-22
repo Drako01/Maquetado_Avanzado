@@ -18,6 +18,7 @@
         "button-name": "off"
       }
     ],
-    "button-type": "off"
+    "button-type": "off",
+    "highest-available-document-mode": "off"
   }
 }
