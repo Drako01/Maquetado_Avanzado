@@ -9,7 +9,8 @@ nav {
     gap: .5rem;
     padding: .5rem;
     background: linear-gradient(var(--first),
-            var(--second))
+            var(--second));
+    opacity: .6;
 }
 
 nav a {
@@ -48,6 +49,7 @@ nav a:hover {
 @media screen and (min-width: 768px) {
     nav {
         justify-content: flex-start;
+        opacity: 1;
         gap: 50%;
     }
 
@@ -73,6 +75,5 @@ nav a:hover {
         padding: .5rem calc(50vw - 660px);
     }
 }
-
 
 /* 2022 - Autor: Alejandro Daniel Di Stefano */

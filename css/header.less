@@ -3,18 +3,28 @@
 @secondary: var(--second);
 @light: var(--light);
 @dark: var(--dark);
+@col: 24;
 @n: none;
+@path: '../assets/img';
+@backgrounds: 'osx-sierra',
+    'osx-el-capitan',
+    'osx-high-sierra',
+    'osx-mavericks',
+    'osx-yosemite';
+@positions: relative, absolute, fixed, sticky, static;
 
 // Nesting: Estilos que se anidan dentro de otros
 #header {
-    .position(relative);
     .flexbox(column; center; center);
-    color: @light;
+    &:extend(.p-relative);
     min-height: min(100vh, 640px);
+    overflow: hidden;
+    color: @light;
 
     // Encabezado Principal
     .header {
         .normalize(@p: 1rem);
+        .font;
     }
 
     // Galeria
@@ -23,11 +33,20 @@
 
         li {
             &:extend(.cover);
+            background: var(--color) var(--bg) center/cover;
+            .bg-colors(10);
+            .bg-images(@backgrounds);
             opacity: 0;
+            left: -100%;
+            transition: all .5s ease-in-out;
 
             &.active {
                 opacity: 1;
-                background-color: @dark;
+                left: 0;
+
+                &+li {
+                    left: 100%;
+                }
             }
         }
 
@@ -38,13 +57,29 @@
         &:extend(.unstyled);
         &:extend(.zeroise);
 
+        &.control {
+            .position(absolute; @x-axis: bottom);
+            .font;
+            &:extend(.col-6);
+            color: @light;
+            background-color: transparent;
+        }
+
         &.icon {
-            &-prev::before {
-                content: '<';
+            &-prev {
+                left: 0;
+
+                &::before {
+                    content: '<';
+                }
             }
 
-            &-next::before {
-                content: '>';
+            &-next {
+                right: 0;
+
+                &::before {
+                    content: '>';
+                }
             }
         }
     }
@@ -92,11 +127,68 @@
 }
 
 // Atributos de Position
-.position(@p: relative; @x: 0; @y: 0; @x-axis: left; @y-axis: top; @z: 0) {
+.position(@p: relative;
+    @x: 0;
+    @y: 0;
+    @x-axis: left;
+    @y-axis: top;
+
+    @z: 0) {
     position: @p;
     @{x-axis}: @x;
     @{y-axis}: @y;
     z-index: @z;
 }
+
+.font(@min: .5rem; @mid: 2vw; @max: 5rem) {
+    font-size:~'min( calc(@{min} + @{mid}), @{max})';
+    text-shadow: 0 0~'min( calc(@{min}/2 + @{mid}/2), calc(@{max}/2))'@dark;
+}
+
+// Mixins Recursivos: Estilos que se repiten en base a una condicion
+.bg-colors(@max: 5; @i: 1) when (@i <=@max) {
+    &:nth-child(@{i}n) {
+        --color: hsl(@i * (360 / @max), 50%, 50%);
+        --bg: linear-gradient(to top right,
+                hsl(@i * (360 / @max), 50%, 50%),
+                hsl(@i * (360 / @max / 2), 50%, 50%));
+    }
+
+    .bg-colors(@max; @i + 1);
+}
+
+.bg-images(@bg; @i: 1) when (@i <=length(@bg)) {
+    @img: extract(@bg, @i);
+
+    &:nth-child(@{i}) {
+        --bg: url('@{path}/@{img}.jpg');
+    }
+
+    .bg-images(@bg; @i + 1);
+}
+
+/* Atributos de Posicion*/
+.positionClass(@i: 1) when (@i <=length(@positions)) {
+    @pos: extract(@positions, @i);
+
+    .p-@{pos} {
+        position: @pos;
+    }
+
+    .positionClass(@i + 1);
+}
+
+.positionClass;
+
+/* Sistema de Grillas */
+.grid (@i: 1) when (@i <=@col) {
+    .col-@{i} {
+        width: percentage((@i / @col));
+    }
+
+    .grid(@i + 1);
+}
+
+.grid;
 
 /* Autor: Alejandro Daniel Di Stefano */
