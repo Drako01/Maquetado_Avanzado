@@ -38,7 +38,7 @@
             .bg-images(@backgrounds);
             opacity: 0;
             left: -100%;
-            transition: all .5s ease-in-out;
+            transition: all .5s linear;
 
             &.active {
                 opacity: 1;
@@ -50,6 +50,24 @@
             }
         }
 
+    }
+
+    // Indicadores
+    .indicators {
+        .flexbox(@jc: center);
+
+        button {
+            .normalize(.2rem; .5rem);
+            border-radius: .5rem;
+            background-color: @light;
+            box-shadow: 0 0 .5rem @dark;
+            transition: all .2s ease-out;
+            cursor: pointer;
+
+            &.active {
+                padding: .5rem 1.5rem;
+            }
+        }
     }
 
     // Controles
