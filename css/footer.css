@@ -650,6 +650,9 @@
   padding: 0.25rem 1rem;
   text-transform: uppercase;
 }
+#footer #contact .btn:hover {
+  cursor: pointer;
+}
 #footer .social {
   max-width: 640px;
   display: flex;

@@ -160,6 +160,7 @@ $max in $media {
 
             &:hover {
                 @extend .text-light, .bg-primary;
+                cursor: pointer;
             }
         }
     }
