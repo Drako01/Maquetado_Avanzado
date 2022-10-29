@@ -7,29 +7,26 @@ const next = d.querySelector('.control.icon-next');
 const gallery = d.querySelectorAll('.slide li');
 const indicators = d.querySelectorAll('.indicators button');
 
-
 menuBtn.addEventListener('click', (e) => {
-    menuList.classList.toggle('active') ?
-    e.target.classList.replace('menu-open', 'menu-close') :
-    e.target.classList.replace('menu-close', 'menu-open') ;
-
+    if ( menuList.classList.toggle('active') ) {
+        e.target.classList.replace('menu-open', 'menu-close') 
+    } else {
+        e.target.classList.replace('menu-close', 'menu-open')
+    }
 })
-
-window.setInterval(()=> next.click(), 30000);
+window.setInterval(() => next.click(), 30000);
 prev.addEventListener('click', () => {
     getItem('prev', gallery)
     getItem('prev', indicators)
 })
-next.addEventListener('click', () => {
+next.addEventListener('click', () => { 
     getItem('next', gallery)
     getItem('next', indicators)
 })
-indicators.forEach( (btn, i) => 
-    btn.addEventListener('click', () => {
-        getItem(i, gallery)
-        getItem(i, indicators)
-    })
-)
+indicators.forEach( (btn, i) => btn.addEventListener( 'click', () => {
+    getItem(i, gallery)
+    getItem(i, indicators)
+}))
 
 function getItem(type, array) {
     let nextElement;
@@ -40,7 +37,7 @@ function getItem(type, array) {
             img.nextElementSibling || img.parentNode.firstElementChild :
             type == 'prev' ?
             img.previousElementSibling || img.parentNode.lastElementChild :
-            nextElement = array[type]);            
+            array[type])
         }
     }
     nextElement.classList.add('active')
