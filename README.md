@@ -14,5 +14,16 @@ Temas a Trabajar:
 * Implementar Transformaciones y Transiciones
 * Incorporación de elementos 3D
 
+## Instalacion de compiladores
+To install and run this proyect just type and execute
+
+Para compilar código SASS
+```bash
+npm i -g sass
+```
+y para LESS
+```bash
+npm i -g less less-watch-compiler sass
+```
 
 ## Alejandro Di Stefano
