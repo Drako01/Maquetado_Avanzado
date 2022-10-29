@@ -31,4 +31,4 @@ npm i -g less less-watch-compiler sass
 ## Alejandro Di Stefano
 [Visita mi web](https://armotusitio.com)
 
-<div align="center"><img src="https://armotusitio.com/img/Logo-Armo-tu-sitio-com.gif" width="200" /></div>
+<div align="center"><img src="https://armotusitio.com/img/Logo-Armo-tu-sitio-com.gif" width="250" border-radius="20"/></div>
