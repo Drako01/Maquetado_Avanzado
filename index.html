@@ -97,20 +97,37 @@
         <form id="contact">
             <h2>Hacenos tu consulta</h2>
             <label for="contact_name">Ingrese su Nombre</label>
-            <input type="text" id="contact_name" name="name" pattern="[a-z A-Z]{3,50}" placeholder="Cristian Racedo"
-                maxlength="50" autofocus required>
+            <input 
+                type="text" 
+                id="contact_name" 
+                name="name" 
+                pattern="[a-z A-Z]{3,50}"
+                placeholder="Cristian Racedo"
+                maxlength="50"
+                autofocus
+                required>
             <p class="validation">
                 Ingrese su nombre solamente con letras, el mismo debe poseer entre 3 y 50 caracteres
             </p>
             <label for="contact_email">Ingrese su Correo</label>
-            <input id="contact_email" name="email" type="email" placeholder="cristiandracedo@hotmail.com" minlength="8"
+            <input 
+                id="contact_email" 
+                name="email"
+                type="email" 
+                placeholder="cristiandracedo@hotmail.com"
+                minlength="8"
                 required>
             <p class="validation">
                 Ingrese un correo de al menos 8 caracteres que respete el formato "usuario@servidor"
             </p>
             <label for="contact_consult">Ingrese su consulta</label>
-            <textarea name="consult" id="contact_consult" placeholder="Buenas, mi consulta es..." minlength="20"
-                maxlenght="200"></textarea>
+            <textarea 
+                name="consult" 
+                id="contact_consult" 
+                placeholder="Buenas, mi consulta es..."
+                minlength="20" 
+                maxlenght="200"
+                required></textarea>
             <button class="btn btn-success">enviar</button>
         </form>
         <!-- Redes sociales -->
