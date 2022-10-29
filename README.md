@@ -26,4 +26,6 @@ y para LESS
 npm i -g less less-watch-compiler sass
 ```
 
+![](/preview.jpg)
+
 ## Alejandro Di Stefano
