@@ -154,7 +154,7 @@ $max in $media {
         }
 
         .btn {
-            @include normalize(.25rem 0 .5rem auto, .25rem 1rem, 1px solid);
+            @include normalize(.25rem 0 .5rem auto, .4rem 1rem, 1px solid);
             @extend .text-primary, .border-primary;
             text-transform: uppercase;
 
