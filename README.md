@@ -26,6 +26,6 @@ y para LESS
 npm i -g less less-watch-compiler sass
 ```
 
-![][(https://www.kindpng.com/picc/m/485-4850280_sass-and-less-support-sass-less-logo-png.png)]
+![][url:(https://www.kindpng.com/picc/m/485-4850280_sass-and-less-support-sass-less-logo-png.png)]
 
 ## Alejandro Di Stefano
