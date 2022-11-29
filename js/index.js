@@ -47,10 +47,13 @@ function getItem(type, array) {
 links.forEach( item => {
     item.addEventListener('mouseover', () => {
         let audio = d.createElement('audio');
-        audio.src = 'assets/audio/whatsapp.mp3';
-        audio.play();
+        audio.src = 'assets/sound/sound.mp3';
+        audio.autoplay = true;
         item.appendChild(audio);
-        setInterval(() => item.removeChild(audio), 2000);
+        audio.click();
+        audio.volume = 0;
+        audio.play()
+        setTimeout(() => item.removeChild(audio), 3000);
     })
 } )
 
